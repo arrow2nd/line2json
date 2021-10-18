@@ -10,7 +10,7 @@ LINE のトーク履歴ファイルをパースするやつ
 import {
   parse,
   TalkData,
-} from "https://github.com/arrow2nd/line-talk-parser/blob/main/mod.ts";
+} from "https://github.com/arrow2nd/line-talk-parser/raw/main/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const histories: TalkData[] = parse(text);
@@ -21,7 +21,7 @@ console.log(histories);
 ### JSON にする
 
 ```ts
-import { toJson } from "https://github.com/arrow2nd/line-talk-parser/blob/main/mod.ts";
+import { toJson } from "https://github.com/arrow2nd/line-talk-parser/raw/main/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const json = toJson(text);
