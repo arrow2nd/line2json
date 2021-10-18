@@ -29,6 +29,11 @@ const json = toJson(text);
 Deno.writeTextFileSync("histroy.json", json);
 ```
 
+## 検証環境
+
+- Windows / Mac 版 LINE v7.2.0
+- Android 版 LINE v11.17.1
+
 ## 仕様
 
 - LINE のシステムメッセージや URL、LINE 依存の絵文字を含むメッセージは除外されます
