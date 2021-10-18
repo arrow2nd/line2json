@@ -1,0 +1,26 @@
+[
+	{
+		"date": "2021/01/01",
+		"time": "12:03",
+		"username": "A",
+		"message": "あいうえお"
+	},
+	{
+		"date": "2021/01/01",
+		"time": "17:38",
+		"username": "B",
+		"message": "かきくけこ さしすせそ"
+	},
+	{
+		"date": "2021/01/01",
+		"time": "19:38",
+		"username": "A",
+		"message": "Ψ( 'ч' ☆)"
+	},
+	{
+		"date": "2021/01/02",
+		"time": "17:04",
+		"username": "B",
+		"message": "AAA BBB CCC DDD"
+	}
+]
