@@ -1,6 +1,6 @@
 # line-talk-parser
 
-LINE のトーク履歴ファイルをパースするやつ
+日本語環境の LINE（スマホ・PC）で出力したトーク履歴ファイルをパースするやつ
 
 ## 使い方
 
@@ -28,3 +28,8 @@ const json = toJson(text);
 
 Deno.writeTextFileSync("histroy.json", json);
 ```
+
+## 仕様
+
+- LINE のシステムメッセージや URL、LINE 依存の絵文字を含むメッセージは除外されます
+- 時刻は全て 24 時間表記です
