@@ -7,7 +7,7 @@ const regexp = {
 export type TalkData = {
   date: string;
   time: string;
-  username: string;
+  user: string;
   message: string;
 };
 
@@ -73,7 +73,7 @@ export function parse(text: string): TalkData[] {
 
   let date = "";
   let time = "";
-  let username = "";
+  let user = "";
   let message = "";
 
   for (const line of lines) {
@@ -91,13 +91,13 @@ export function parse(text: string): TalkData[] {
         results.push({
           date,
           time,
-          username,
+          user,
           message: message.replace(/(^\"|\"$)/g, ""), // ダブルクオートを削除
         });
       }
 
       time = to24Hour(splited[1]);
-      username = splited[2].replace(/\t.*$/g, ""); // 引用元の名前を削除
+      user = splited[2].replace(/\t.*$/g, ""); // 引用元の名前を削除
       message = splited[3];
     } else if (!regexp.time.test(line)) {
       // 複数行をまとめる
