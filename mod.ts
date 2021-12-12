@@ -24,7 +24,7 @@ function isMessage(text: string): boolean {
     /^.+がメッセージの送信を取り消しました$/,
     /.+を作成しました$/,
     /^イベント.+が.{2}されました/,
-    /⁩アルバムを.{2}しました/,
+    /アルバムを.{2}しました/,
     /ノート[をに].{2}しました/,
     /アルバムに写真を追加しました/,
     /^\(emoji\)/,
@@ -59,7 +59,7 @@ function fmtDate(date: string): string {
   const d = date.match(regexp.date)?.toString();
   if (!d) return "";
 
-  return d.replaceAll(".", "/");
+  return d.replace(/\./g, "/");
 }
 
 /**
