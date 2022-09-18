@@ -1,6 +1,6 @@
-# line-talk-parser
+# line2json
 
-日本語環境の LINE（スマホ・PC）で出力したトーク履歴ファイルをパースするやつ
+LINE で出力したトーク履歴ファイルを JSON にパースするモジュール
 
 ## 使い方
 
@@ -10,7 +10,7 @@
 import {
   parse,
   TalkData,
-} from "https://github.com/arrow2nd/line-talk-parser/raw/main/mod.ts";
+} from "https://github.com/arrow2nd/line2json/raw/main/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const histories: TalkData[] = parse(text);
@@ -21,7 +21,7 @@ console.log(histories);
 ### JSON にする
 
 ```ts
-import { toJson } from "https://github.com/arrow2nd/line-talk-parser/raw/main/mod.ts";
+import { toJson } from "https://github.com/arrow2nd/line2json/raw/main/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const json = toJson(text);
