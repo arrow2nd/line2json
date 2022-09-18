@@ -4,6 +4,7 @@ const regexp = {
   talk: /^(.*\d{1,2}:\d{1,2})[ \t](.*?)[ \t](.*)/,
 };
 
+/* トークデータ */
 export type TalkData = {
   date: string;
   time: string;
@@ -64,8 +65,8 @@ function fmtDate(date: string): string {
 
 /**
  * LINEトーク履歴をパース
- *
  * @param text トーク履歴文字列
+ * @return トークデータ配列
  */
 export function parse(text: string): TalkData[] {
   const lines = text.split(/[\r\n]/).filter((e) => e !== "");
@@ -110,8 +111,8 @@ export function parse(text: string): TalkData[] {
 
 /**
  * LINEトーク履歴をJSON文字列に変換
- *
  * @param text トーク履歴文字列
+ * @return JSON文字列
  */
 export function toJson(text: string) {
   return JSON.stringify(parse(text), null, "\t");
