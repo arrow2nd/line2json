@@ -7,7 +7,7 @@ LINE で出力したトーク履歴ファイルを JSON にパースするモジ
 ### パースする
 
 ```ts
-import { parse, TalkData } from "https://deno.land/x/line2json";
+import { parse, TalkData } from "https://deno.land/x/line2json@v0.1.0/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const histories: TalkData[] = parse(text);
@@ -18,7 +18,7 @@ console.log(histories);
 ### JSON にする
 
 ```ts
-import { toJson } from "https://deno.land/x/line2json";
+import { toJson } from "https://deno.land/x/line2json@v0.1.0/mod.ts";
 
 const text = Deno.readTextFileSync("talk_histroy.txt");
 const json = toJson(text);
