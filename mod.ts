@@ -43,17 +43,19 @@ function to24Hour(time: string): string {
   const t = time.match(regexp.time)?.toString();
   if (!t) return "";
 
-  if (/^午後/.test(time)) {
-    return t
-      .split(":")
-      .map((e, i) => {
-        const n = parseInt(e.trim());
-        return String(i === 0 ? n + 12 : n).padStart(2, "0");
-      })
-      .join(":");
-  }
+  return t
+    .split(":")
+    .map((e, i) => {
+      let n = parseInt(e.trim());
 
-  return t.padStart(2, "0");
+      // 午後表記かつ、時間なら12を足して24時間表記にする
+      if (i === 0 && /^午後/.test(time)) {
+        n += 12;
+      }
+
+      return String(n).padStart(2, "0");
+    })
+    .join(":");
 }
 
 function fmtDate(date: string): string {
