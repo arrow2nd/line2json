@@ -62,7 +62,12 @@ function fmtDate(date: string): string {
   const d = date.match(regexp.date)?.toString();
   if (!d) return "";
 
-  return d.replace(/\./g, "/");
+  return d.split(/[\/\.]/).map((e, i) => {
+    // 年
+    if (i === 0) return e;
+    // 月日
+    return e.padStart(2, "0");
+  }).join("/");
 }
 
 /**
