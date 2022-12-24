@@ -53,7 +53,7 @@ function to24Hour(time: string): string {
       .join(":");
   }
 
-  return t;
+  return t.padStart(2, "0");
 }
 
 function fmtDate(date: string): string {
